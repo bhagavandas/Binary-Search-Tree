@@ -1,5 +1,7 @@
 package com.bl.binarysearchtree;
 
+import java.util.Scanner;
+
 public class BinaryTree {
 
 	Node root;
@@ -11,6 +13,7 @@ public class BinaryTree {
 		display(this.root);
 		System.out.println();
 	}
+
 // insert roots and nodes
 	public Node insertAll(Node root, Node node) {
 
@@ -28,6 +31,7 @@ public class BinaryTree {
 
 		return root;
 	}
+
 // display method
 	public void display(Node root) {
 		if (root == null)
@@ -37,8 +41,8 @@ public class BinaryTree {
 		System.out.print(" " + root.x);
 		display(root.right);
 	}
-	
-	//getting the size of tree
+
+	// getting the size of tree
 	public void size() {
 		System.out.println(" The size of the tree is= " + sizeAll(root));
 	}
@@ -49,6 +53,25 @@ public class BinaryTree {
 			return 0;
 
 		return sizeAll(root.left) + sizeAll(root.right) + 1;
+	}
+
+	// searching 63 in binary tree
+	public void search(int x) {
+
+		if (searchAll(root, x))
+			System.out.println("Searched element found! ");
+		else
+			System.out.println(" Searched element not found");
+	}
+
+	public boolean searchAll(Node root, int x) {
+
+		if (root == null)
+			return false;
+		if (root.x == x)
+			return true;
+		else
+			return searchAll(root.left, x) || searchAll(root.right, x);
 	}
 
 }
