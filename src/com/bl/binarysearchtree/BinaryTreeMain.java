@@ -10,6 +10,7 @@ public class BinaryTreeMain {
 		tree.insert(56);
 		tree.insert(30);
 		tree.insert(70);
+		tree.size();
 	}
 
 }
